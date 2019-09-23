@@ -14,9 +14,10 @@ digunakan sebagai penghubung antar mesin database
 
 Langkah - langkah membuat aplikasi :
 1. instal XAMPP dan ODBC
-2.  download php_pdo_sqlsrv_56_ts.dll dan php_sqlsrv_56_ts.dll kemudian diletakkan di folder C:\xampp\php\ext
+2. Instal SQL server dan SQL server manajemen studio
+3. download php_pdo_sqlsrv_56_ts.dll dan php_sqlsrv_56_ts.dll kemudian diletakkan di folder C:\xampp\php\ext
 extension ini digunakan untuk koneksi dari php ke SQL SERVER.
-3. Mengaktifkan extension sqlsrv agar php bisa mengakses database SQL Server.
+4. Mengaktifkan extension sqlsrv agar php bisa mengakses database SQL Server.
 caranya buka php.ini (klik kanan pada xampp bagian config pada apache) kemudian tambahkan 
 extension=php_pdo_sqlsrv_56_ts
 extension=php_sqlsrv_56_ts
