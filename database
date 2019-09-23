@@ -1,0 +1,47 @@
+use pj_ayu
+
+create table pelanggan(
+cust_id char (4) primary key,
+nama varchar (20) ,
+no_telp varchar (11) ,
+alamat varchar (40),
+)
+
+create table barang(
+kd_brg char(4) primary key,
+nm_brg varchar(20) ,
+hrg int,
+stok int,
+satuan char(5),
+)
+
+
+create table barangmasuk(
+no_bm char(4) primary key,
+tgl_bm date,
+kd_brg char (4) foreign key(kd_brg) references barang (kd_brg),
+qty int,
+)
+
+create table jual(
+no_bukti char (4) primary key,
+cust_id char (4) foreign key(cust_id) references pelanggan (cust_id),
+tgl date,
+total int,
+)
+
+create table detail(
+no_detail int identity(1,1) primary key,
+no_bukti char (4) ,
+kd_brg char (4) foreign key(kd_brg) references barang (kd_brg),
+qty int,
+jumlah int,
+)
+
+create table userr(
+id_user int primary key,
+nama char (40) ,
+username varchar (40) ,
+passwordku varchar (40) ,
+jabatan varchar (40) ,
+)
