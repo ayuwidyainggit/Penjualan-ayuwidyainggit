@@ -8,30 +8,9 @@ if (isset($_POST['tambahdata1'])) {
   $tgl    = $_POST['tgl']; 
   $cust_id    = $_POST['cust_id']; 
   
-  $stok = $_POST['stok'];
   $total = $_POST['total'];
  
 
-
-  if ($tgl > date('Y-m-d')){
-    echo "<SCRIPT language=Javascript>
-        alert('Maaf transaksi belum boleh dilakukan! Silahkan isi data dengan benar. ') 
-        </script>
-        <script>window.location='jual_i.php'</script>";
-
-  exit;
-        } else {
-
-}
-
-if ($total == 0 ){
-  echo "<SCRIPT language=Javascript>
-      alert('Maaf transaksi tidak bisa dilakukan karena tidak ada barang yang dipilih. ') 
-      </script>
-      <script>window.location='jual_i.php'</script>";
-
-exit;
-      } else {
 
       
 
@@ -72,7 +51,7 @@ $tsql2 = "update  barang  set stok = stok -'$qty' where kd_brg='$kd_brg'";
 $stmt2 = sqlsrv_query( $conn, $tsql2);
 
 header('location:reset.php');
-}
+
       }}
 
  ?>

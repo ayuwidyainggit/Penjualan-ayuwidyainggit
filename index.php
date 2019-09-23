@@ -104,9 +104,9 @@ include "menu.php";
 if($data2['c'] == 0){
 	echo "<p> Lakukan Promosi Sekarang</p>";
 }
-if($data2['c'] <= 10){
+if($data2['c'] >=1 && $data2['c'] <= 10){
 	echo "Tingkatkan Promosi Anda";
-}else{
+}if($data2['c'] >=11){
 	echo "Good Job";
 }
 ?>
@@ -127,7 +127,7 @@ if($data2['c'] <= 10){
 						<h4>Sales</h4>
 						<?php                                
 					  $tgl    =date("Y-m-d");
-                                    $tsql = "select sum(total) as t from jual where tgl='$tgl'";
+                                    $tsql = "select sum(total) as y from jual ";
                                     $stmt = sqlsrv_query( $conn, $tsql);
                                     if( $stmt === false ) {
                                        echo "Error in executing query.</br>";
@@ -148,15 +148,16 @@ if($data2['c'] <= 10){
                                         
                                     ?>
 						
-						<h3><?php echo number_format($data['t'], $jumlah_desimal, $pemisah_desimal, $pemisah_ribuan); ?></h3>
+						
+						<h3><?php echo number_format($data['y'], $jumlah_desimal, $pemisah_desimal, $pemisah_ribuan); ?></h3>
 <p>
 <?php
-if($data['t'] == 0){
+if($data['y'] == 0){
 	echo  "Lakukan Penjualan Sekarang";
 }
-if($data['t'] <= 1000000){
+if($data['y'] >= 1 && $data['y'] <= 1000000){
 	echo "Tingkatkan Penjualan Anda";
-}else{
+}if($data['y'] >=  100001){
 	echo "Good Job";
 }
 ?>
